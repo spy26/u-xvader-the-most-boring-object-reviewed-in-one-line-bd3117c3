@@ -15,6 +15,7 @@ ENTRY = (
 # the sealed scorer would refuse.
 assert 1 <= len(ENTRY) <= 200, f"entry is {len(ENTRY)} characters, gate needs 1-200"
 assert "\n" not in ENTRY, "entry must be a single line"
+assert ENTRY == ENTRY.strip(), "entry must not start or end with whitespace"
 
 
 def main() -> None:
